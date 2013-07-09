@@ -10,7 +10,10 @@ var resp = fs.readFile('index.html','utf8',function (err, data) {
 });
 
 app.get('/', function(request, response) {
-  response.send('test');
+  response.send(fs.readFile('index.html','utf8',function (err, data) {
+  if (err) throw err;
+  data;
+}));
 });
 
 var port = process.env.PORT || 5000;
