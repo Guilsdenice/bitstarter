@@ -11,7 +11,10 @@ var resp = fs.readFile('index.html',function (err, data) {
 });
 
 app.get('/', function(request, response) {
-  response.send('test');
+  response.send(fs.readFile('index.html',function (err, data) {
+  if (err) throw err;
+  data.toString('utf8');
+}));
 });
 
 var port = process.env.PORT || 5000;
