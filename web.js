@@ -10,7 +10,7 @@ var resp = fs.readFile('index.html',function (err, data) {
   data.toString('utf8');
 });
 
-app.get('/', function(request, response) {
+app.get('/', function(request, resp) {
   response.send(resp);
 });
 
