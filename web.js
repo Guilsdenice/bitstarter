@@ -3,7 +3,6 @@ var express = require('express');
 var app = express.createServer(express.logger());
 
 var fs = require ('fs');
-var a = 0
 
 var resp = fs.readFile('index.html',function (err, data) {
   if (err) throw err;
@@ -11,10 +10,7 @@ var resp = fs.readFile('index.html',function (err, data) {
 });
 
 app.get('/', function(request, response) {
-  response.send(fs.readFile('index.html',function (err, data) {
-  if (err) throw err;
-  data.toString('utf8');
-}));
+  response.send(resp);
 });
 
 var port = process.env.PORT || 5000;
