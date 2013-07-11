@@ -63,7 +63,7 @@ var clone = function(fn) {
 };
 
 var urlfile = function(url){
-   rest.get(url).on('complete', fs.readFileSync(response,'utf8'));
+   rest.get(url).on('complete', fs.filewrite('index2.html, fs.readFileSync(response,'utf8')));
 };
 
 if(require.main == module) {
@@ -80,7 +80,7 @@ if(require.main == module) {
 
     
     var checkJson = checkHtmlFile(if(program.file == 'http*'){
-	url(program.file);
+	urlfile(program.file);
 	program.file},
 	program.checks)
     
